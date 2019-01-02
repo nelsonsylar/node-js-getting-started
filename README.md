@@ -20,6 +20,8 @@ express()
   .get('/', (req, res) => res.sendfile(path.join(__dirname,'./index.html')))
   .listen(PORT, () => console.log(`Listening on ${ PORT }`))
 ```
+5. 修改package.json,在script里添加"heroku": "NODE_ENV=production node index"
+6. 在工作目录新建一个Procfile文件(有则仅修改内容)并写入`web: npm run heroku`.
 5. 在工作目录中依次:
 - `heroku login          //登录,会弹出网页点击登录`
 - `heroku create        //创建heroku `
